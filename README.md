@@ -46,8 +46,6 @@ subtitle-extractor/
 
 ```
 .bili-subtitle-x-subtitle-panel-text
-.subtitle-panel-text
-.video-subtitle
 ```
 
 ## 权限说明
