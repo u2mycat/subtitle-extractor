@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "B站字幕提取器",
+  "version": "1.0",
+  "description": "从B站视频中提取字幕，支持自定义选择器，流式显示",
+  "permissions": ["activeTab", "storage", "clipboardWrite"],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.bilibili.com/*"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

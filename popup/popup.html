@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 500px;
+      padding: 10px;
+      font-family: system-ui, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .config {
+      margin-bottom: 12px;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 6px;
+      box-sizing: border-box;
+      font-family: monospace;
+    }
+    .button-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    button {
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    .status {
+      font-size: 12px;
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
+    .log {
+      border: 1px solid #ccc;
+      height: 300px;
+      overflow-y: auto;
+      background: #f9f9f9;
+      padding: 8px;
+      font-size: 13px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .log div {
+      border-bottom: 1px solid #eee;
+      padding: 4px 0;
+    }
+    .export-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="config">
+    <label>字幕元素选择器 (CSS Selector)</label>
+    <input type="text" id="selectorInput" value=".bili-subtitle-x-subtitle-panel-text" placeholder="例如 .bili-subtitle-x-subtitle-panel-text">
+  </div>
+  <div class="button-group">
+    <button id="startBtn">▶ 开始提取</button>
+    <button id="stopBtn">⏹️ 停止提取</button>
+    <button id="clearBtn">🗑️ 清除显示</button>
+    <button id="pickerBtn">🎯 选择元素</button>
+  </div>
+  <div class="status" id="statusMsg">就绪</div>
+  <div class="log" id="logArea"></div>
+  <div class="export-group">
+    <button id="exportJsonBtn">📄 导出为 JSON</button>
+    <button id="copyArrayBtn">📋 复制数组到剪贴板</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
